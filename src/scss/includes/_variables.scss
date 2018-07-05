@@ -26,3 +26,10 @@ $color-orange: #E45A3D;
 // Image and font paths for functions in includes/_functions.scss
 $path-images: '../../images';
 $path-fonts: '../../fonts';
+
+// Layout and Grid
+$l-container-width: $breakpoint-xlarge;
+$l-gutter-body: 0;
+$l-gutter-column: 0;
+$l-column-count: 12;
+$l-col-width: 100% / $l-column-count;
