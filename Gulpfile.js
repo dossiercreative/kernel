@@ -27,6 +27,10 @@ gulp.task('serve', ['sass', 'scripts', 'modernizr'], function() {
 gulp.task('sass', function() {
   return gulp.src("src/scss/*.scss")
     .pipe(sass())
+    .on('error', function (err) {
+      console.log(err.toString());
+      this.emit('end');
+    })
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest("build/css"))
     .pipe(rename({ suffix: '.min' }))
