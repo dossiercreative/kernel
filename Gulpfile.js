@@ -10,19 +10,6 @@ var autoprefixer  = require('gulp-autoprefixer');
 var minifycss     = require('gulp-minify-css');
 var modernizr     = require('gulp-modernizr');
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass', 'scripts', 'modernizr'], function() {
-
-  browserSync.init({
-    server: "./",
-    port: 3001
-  });
-
-  gulp.watch("src/scss/**/*.scss", ['sass']);
-  gulp.watch("src/js/**/*.js", ['scripts']);
-  gulp.watch("*.html").on('change', browserSync.reload);
-});
-
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
   return gulp.src("src/scss/*.scss")
@@ -63,4 +50,17 @@ gulp.task('modernizr', function() {
     .pipe(gulp.dest("build/js/vendor"))
 });
 
-gulp.task('default', ['serve']);
+// Static Server + watching scss/html files
+gulp.task('serve', gulp.parallel('sass', 'scripts', 'modernizr', function() {
+
+  browserSync.init({
+    server: "./",
+    port: 3001
+  });
+
+  gulp.watch("src/scss/**/*.scss", gulp.series('sass'));
+  gulp.watch("src/js/**/*.js", gulp.series('scripts'));
+  gulp.watch("*.html").on('change', browserSync.reload);
+}));
+
+gulp.task('default', gulp.series('serve'));
