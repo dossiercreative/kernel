@@ -1,15 +1,7 @@
 <!doctype html>
 <html lang="">
 <head>
-  <!--
-       _               _           
-      | |             (_)          
-    __| | ___  ___ ___ _  ___ _ __ 
-   / _` |/ _ \/ __/ __| |/ _ \ '__|
-  | (_| | (_) \__ \__ \ |  __/ |   
-   \__,_|\___/|___/___/_|\___|_|   
-                                   
-  -->
+
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -27,35 +19,45 @@
   <link rel="stylesheet" href="build/css/style.min.css">
 
 </head>
-<body>
+<body fp-style-dark page-home>
   <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
   <div class="overlay overlay--loading" style="position: fixed;width: 100vw;height: 100vh;background: white;z-index: 99;">
-    <div style="width:100px;height:100px;position:absolute;left:50%;top:50%;margin-left:-50px;margin-top:-50px;">
-      Loading...
-    </div>
-  </div><!-- .overlay -->
+  <div style="width:100px;height:100px;position:absolute;left:50%;top:50%;margin-left:-50px;margin-top:-50px;">
+    Loading...
+  </div>
+</div><!-- .overlay -->
 
   <div class="navigation">
-    <a class="navigation__item j-navigation-toggle" href="#">Nav Item</a>
-  </div>
+  <a class="navigation__item j-navigation-toggle" href="#">Nav Item</a>
+</div>
 
-  <div class="hamburger j-navigation-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<div class="hamburger j-navigation-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-  <div>Helloooo world</div>
+  
 
+  <h1>Hi! This is the index file.</h1>
+  <br>
+  <br>
+  <p>Here is an example of a form:</p>
   <form class="form form--validate">
-    <div class="form__indicates-required">* indicates required</div>
-    <input type="text" placeholder="Your Name" value="" name="name" required />
-    <input type="email" placeholder="Your Email" value="" name="email" required pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" />
-    <input type="submit" />
-  </form>
+  <div class="form__indicates-required">* indicates required</div>
+  <input type="text" placeholder="Your Name" value="" name="name" required />
+  <input type="email" placeholder="Your Email" value="" name="email" required pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" />
+  <input type="submit" />
+</form>
+
+
+
+  <div class="footer">
+  Footer
+</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="build/js/vendor/jquery.min.js"><\/script>')</script>

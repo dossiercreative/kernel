@@ -11,6 +11,7 @@ var notify        = require('gulp-notify');
 var autoprefixer  = require('gulp-autoprefixer');
 var minifycss     = require('gulp-minify-css');
 var modernizr     = require('gulp-modernizr');
+var nunjucksRender = require('gulp-nunjucks-render');
 
 // Compile sass into CSS & auto-inject into browsers
 function css() {
@@ -43,9 +44,25 @@ function js() {
     .pipe(browserSync.stream());
 }
 
+
+// Nunjucks
+function nunjucks() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+    path: ['templates']
+  }))
+  // output files in root folder
+  .pipe(gulp.dest('./'))
+  .pipe(notify({ message: 'Nunjucks Compiled' }))
+  
+}
+
+
 // Modernizr
 // gulp.task('modernizr', function() {
-//   var settings = { 
+//   var settings = {
 //     "cache" : true,
 //     "options" : [
 //       "setClasses"
@@ -60,7 +77,7 @@ function js() {
 function watchFiles() {
   gulp.watch("src/scss/**/*.scss", gulp.series('css','browserSyncReload'));
   gulp.watch("src/js/**/*.js", gulp.series('js','browserSyncReload'));
-  gulp.watch("*.html", browserSyncReload);
+  gulp.watch(["pages/*.html","templates/**/*.html"], gulp.series('nunjucks','browserSyncReload'));
 }
 
 // BrowserSync static server
@@ -83,6 +100,8 @@ function browserSyncReload(done) {
 gulp.task("css", css);
 
 gulp.task("js", js);
+
+gulp.task("nunjucks", nunjucks);
 
 gulp.task("browserSyncReload", browserSyncReload);
 

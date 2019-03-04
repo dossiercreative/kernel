@@ -1,0 +1,15 @@
+{% set bodyClass = "fp-style-dark page-home" %}
+
+{% extends "layout.html" %}
+
+{% from "macros/header-simple.html" import headersimple %}
+
+{% block content %}
+
+  <h1>Hi! This is the index file.</h1>
+  <br>
+  <br>
+  <p>Here is an example of a form:</p>
+  {% include "partials/form.html" %}
+
+{% endblock %}

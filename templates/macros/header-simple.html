@@ -1,0 +1,15 @@
+{% macro headersimple(supertitle, title, text) %}
+<div class="header-simple">
+  <div class="container">
+    <div class="header-simple__supertitle">
+      {{ supertitle }}
+    </div>
+    <h1 class="heading1 heading1--underlined header-simple__title">
+      {{ title}}
+    </h1>
+    <div class="header-simple__text">
+      {{ text }}
+    </div>
+  </div><!-- .container -->
+</div><!-- .header-simple -->
+{% endmacro %}
