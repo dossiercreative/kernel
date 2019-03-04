@@ -95,10 +95,10 @@ app.formvalidation = (function($){
 
         // Check if error message field already exists
         // If not, create one
-        var message = field.form.querySelector('.error-message#error-for-' + id );
+        var message = field.form.querySelector('.form-error-message#error-for-' + id );
         if (!message) {
             message = document.createElement('div');
-            message.className = 'error-message';
+            message.className = 'form-error-message';
             message.id = 'error-for-' + id;
             
             // If the field is a radio button or checkbox, insert error after the label
@@ -156,7 +156,7 @@ app.formvalidation = (function($){
         
 
         // Check if an error message is in the DOM
-        var message = field.form.querySelector('.error-message#error-for-' + id + '');
+        var message = field.form.querySelector('.form-error-message#error-for-' + id + '');
         if (!message) return;
 
         // If so, hide it
